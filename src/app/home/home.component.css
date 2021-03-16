@@ -3,29 +3,34 @@ body{
     align-content: center;
 }
 
+img{
+    width: 100%;
+}
+
 #menu{
     display: flex;
     justify-content: flex-end;
+    padding-top:10px ;
 }
 
 #products-list{
     display: flex;
-    justify-content: center;
-    margin-top: 60px;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
 }
 
 mat-card{
     display: flex;
     width: 80vw;
-    justify-content: space-between;
-    margin-bottom: 5px;
 }
+
 
 mat-icon{
     color: rgb(24, 24, 85);
     cursor: pointer;
 }
 
-mat-icon#delete{
+mat-icon.delete{
     margin-left: 15px;
 }
