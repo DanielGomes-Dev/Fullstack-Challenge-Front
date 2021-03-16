@@ -3,10 +3,6 @@ body{
     align-content: center;
 }
 
-img{
-    width: 100%;
-}
-
 #menu{
     display: flex;
     justify-content: flex-end;
@@ -17,14 +13,32 @@ img{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20px;
 }
 
 mat-card{
+    margin-top: 20px;
     display: flex;
+    justify-content: center;
     width: 80vw;
 }
 
+mat-card>div{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px ;
+}
+
+mat-card>div.button-div{
+    align-items: flex-end;
+}
+
+
+mat-card div div img {
+    position: relative;
+    max-width: 100%;
+
+}
 
 mat-icon{
     color: rgb(24, 24, 85);

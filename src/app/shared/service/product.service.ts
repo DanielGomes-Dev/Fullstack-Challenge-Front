@@ -28,12 +28,21 @@ export class ProductService {
         }
     }
 
-    // public getProductWithId(id: Number): Observable<ProductGet> {
-    //     return this.httpClient.get<ProductGet>(this.apiUrl + '/:' + id);
-    // }
+    public getProductById(id: Number): Observable<ProductGet> {
+        return this.httpClient.get<ProductGet>(this.apiUrl + `/${id}`);
+    }
 
-    // public postProduct(product: any): Observable<ProductPost> {
-    //     return this.httpClient.post<any>(this.apiUrl, product, this.httpOptions);
-    // }
+    public postProduct(product: ProductPost): Observable<any> {
+        return this.httpClient.post<any>(this.apiUrl, product, this.httpOptions);
+    }
+
+    public deleteProducById(id: Number): Observable<ProductPost> {
+        try {
+            return this.httpClient.delete<ProductPost>(this.apiUrl + `/${id}`);
+        } catch (err) {
+            console.log(err);
+        }
+    }
+
 
 }

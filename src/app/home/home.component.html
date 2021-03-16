@@ -1,6 +1,6 @@
 <div id="menu">
 
-    <button mat-button>Adicionar Produto</button>
+    <button mat-button (click)="addProduct()">Adicionar Produto</button>
 
     <button mat-button>Buscar</button>
 
@@ -11,26 +11,39 @@
     <mat-card *ngFor="let product of allProducts">
 
         <div>
-            <img src="https://rockcontent.com/br/wp-content/uploads/sites/2/elementor/thumbs/Descri%C3%A7%C3%A3o-de-produto-no-e-commerce-p2gh8k9dix8ihys8cgb499q4wyvk7k16bkyuysnu18.png"
-                alt="">
-            <p>{{product.filename}}</p>
+
+            <div>
+                <img src="https://rockcontent.com/br/wp-content/uploads/sites/2/elementor/thumbs/Descri%C3%A7%C3%A3o-de-produto-no-e-commerce-p2gh8k9dix8ihys8cgb499q4wyvk7k16bkyuysnu18.png"
+                    alt="">
+            </div>
+
+            <div>
+                <h2>{{product.title}} {{product.id}}</h2>
+            </div>
+
+            <div>
+                <h2>R${{product.price}}</h2>
+            </div>
+
         </div>
 
 
         <div>
-            <h2>{{product.title}}</h2>
-            <p>{{product.type}}</p>
-            <p>{{product.description}}</p>
-            <p>{{product.height}}</p>
-            <p>{{product.width}}</p>
-            <p>{{product.rating}}</p>
+            <p><b>Description</b>: {{product.description}}</p>
+
+            <p><b>type</b>: {{product.type}}</p>
+            <p><b>height</b>: {{product.height}}</p>
+            <p><b>width</b>: {{product.width}}</p>
+            <p><b>rating</b>: {{product.rating}}</p>
 
         </div>
 
 
-        <div>
-            <mat-icon id={{product.id}} class="edit">edit</mat-icon>
-            <mat-icon id={{product.id}} class="delete">delete</mat-icon>
+        <div class="button-div">
+            <div>
+                <mat-icon id={{product.id}} (click)="editProduct(product.id)" class="edit">edit</mat-icon>
+                <mat-icon id={{product.id}} (click)="deleteProduct(product.id)" class="delete">delete</mat-icon>
+            </div>
         </div>
     </mat-card>
 
